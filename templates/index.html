@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- 首页内容 -->
+    <div class="hero">
+        <h1>欢迎使用人脸马赛克工具😶</h1>
+        <p>上传图片或视频，选择想要处理的人脸区域，一键生成马赛克</p>
+        <div class="scroll-down">👇👇👇</div>
+    </div>
+
+    <!-- 上传区域 -->
+    <div class="upload-container" id="upload-section">
+        <div class="picture">
+            <h1>上传图片🖼️</h1>
+            <input type="file" id="file-input1" accept="image/*" />
+            <div class="preview" id="image-preview-container">
+                <img id="preview-image1" src="#" alt="图片预览" style="display: none;" />
+            </div>
+            <div class="button-container">
+                <button id="upload-btn1" class="upload-btn" disabled>上传</button>
+                <button id="save-btn1" class="upload-btn" disabled>保存</button>
+            </div>
+        </div>
+        <div class="video">
+            <h1>上传视频🎬</h1>
+            <input type="file" id="file-input2" accept="video/*" />
+            <div class="preview" id="video-preview-container">
+                <video id="preview-video2" controls style="display: none;"></video>
+            </div>
+            <div class="button-container">
+                <button id="upload-btn2" class="upload-btn" disabled>上传</button>
+                <button id="save-btn2" class="upload-btn" disabled>保存</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

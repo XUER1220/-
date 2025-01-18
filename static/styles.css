@@ -1,0 +1,184 @@
+/* 基本样式 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-position: 0px 0px, 150px 150px;
+    background-size: 60px 60px;
+    /* 默认设置为棋盘格背景，首页会被覆盖 */
+    background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),
+        linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
+}
+
+/* 首页部分 */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 首页背景渐变：紫色到灰色 */
+    background: linear-gradient(to bottom, #802868, #eee);
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    transition: all 1s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    max-width: 600px;
+}
+
+.scroll-down {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+}
+
+/* 滚动动画 */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* 上传区域 */
+.upload-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+    gap: 50px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 1s ease-out;
+    min-height: 90vh;
+    background: linear-gradient(to bottom, #eee, transparent);
+}
+
+.upload-container.fullscreen {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.upload-container .picture,
+.upload-container .video {
+    flex: 1;
+    margin: 30px;
+    border: 10px solid #802869b4;
+    border-radius: 20px;
+    text-align: center;
+    background: transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.preview {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    height: 360px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.preview img,
+.preview video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 上传按钮样式 */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.upload-btn {
+    margin: 0 10px;
+    padding: 15px 50px;
+    background-color: #802868;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.upload-btn:disabled {
+    background-color: #80286999;
+    cursor: not-allowed;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .upload-container {
+        flex-direction: column;
+    }
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* 图片预览容器 */
+#image-preview-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 550px; /* 设置容器高度 */
+    border: 3px solid #ccc; /* 可选：边框样式 */
+    margin-top: 10px; /* 可选：上边距 */
+}
+
+/* 图片样式 */
+#preview-image1 {
+    max-width: 100%; /* 最大宽度为容器宽度 */
+    max-height: 100%; /* 最大高度为容器高度 */
+    object-fit: contain; /* 保持宽高比 */
+}
+
+#video-preview-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 550px; /* 设置容器高度 */
+    border: 3px solid #ccc; /* 可选：边框样式 */
+    margin-top: 10px; /* 可选：上边距 */
+}
+
+/* 图片样式 */
+#preview-video2 {
+    max-width: 100%; /* 最大宽度为容器宽度 */
+    max-height: 100%; /* 最大高度为容器高度 */
+    object-fit: contain; /* 保持宽高比 */
+}
